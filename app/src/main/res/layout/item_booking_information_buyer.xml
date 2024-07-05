@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/constraint_layout">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance_2.CardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="Информация о покупателе"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/constraint_layout"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                mask:layout_constraintEnd_toEndOf="parent"
+                mask:layout_constraintStart_toStartOf="parent"
+                mask:layout_constraintTop_toBottomOf="@+id/textTitle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:includeFontPadding="false"
+                        android:text="Номер телефона"
+                        android:textColor="#b3b7bd"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        mask:layout_constraintEnd_toEndOf="parent"
+                        mask:layout_constraintStart_toStartOf="parent"
+                        mask:layout_constraintTop_toTopOf="parent" />
+
+                    <com.vicmikhailau.maskededittext.MaskedEditText
+                        android:id="@+id/editTextPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:includeFontPadding="false"
+                        android:hint="+7 (***) ***-**-**"
+                        android:background="@null"
+                        android:inputType="phone"
+                        app:mask="+7 (***) ***-**-**"
+                        mask:layout_constraintBottom_toBottomOf="parent"
+                        mask:layout_constraintEnd_toEndOf="parent"
+                        mask:layout_constraintStart_toStartOf="@+id/textView1"
+                        mask:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/constraint_layout"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                mask:layout_constraintEnd_toEndOf="parent"
+                mask:layout_constraintStart_toStartOf="parent"
+                mask:layout_constraintTop_toBottomOf="@+id/cardViewPhone">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:includeFontPadding="false"
+                        android:text="Почта"
+                        android:textColor="#b3b7bd"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        mask:layout_constraintEnd_toEndOf="parent"
+                        mask:layout_constraintStart_toStartOf="parent"
+                        mask:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@null"
+                        android:includeFontPadding="false"
+                        android:ems="10"
+                        android:inputType="textEmailAddress"
+                        mask:layout_constraintBottom_toBottomOf="parent"
+                        mask:layout_constraintEnd_toEndOf="parent"
+                        mask:layout_constraintStart_toStartOf="@+id/textView2"
+                        mask:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:includeFontPadding="false"
+                android:text="Эти данные никому не передаются. После оплаты мы вышлим чек на указанный вами номер и почту"
+                android:textColor="#b3b7bd"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                mask:layout_constraintBottom_toBottomOf="parent"
+                mask:layout_constraintEnd_toEndOf="parent"
+                mask:layout_constraintHorizontal_bias="0.0"
+                mask:layout_constraintStart_toStartOf="parent"
+                mask:layout_constraintTop_toBottomOf="@+id/cardViewEmail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
